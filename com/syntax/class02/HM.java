@@ -20,7 +20,7 @@ public class HM {
 
     WebDriver driver;
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void openAndNavigate ( ) {
         System.setProperty ( "webdriver.chrome.driver", "drivers/chromedriver.exe" );
         driver = new ChromeDriver ( );
@@ -29,7 +29,7 @@ public class HM {
         driver.manage ( ).timeouts ( ).implicitlyWait ( 15, TimeUnit.SECONDS );
     }
 
-    @Test(priority = 1)
+    @Test(priority = 1,groups = "regression")
     public void syntaxLogo ( ) {
         WebElement logo = driver.findElement ( By.xpath ( "//*[@id=\"divLogo\"]/img" ) );
         /*if (syntaxLogo.isDisplayed ( )) {
@@ -40,7 +40,7 @@ public class HM {
         Assert.assertTrue ( logo.isDisplayed ( ) );
     }
 
-    @Test(priority = 2, enabled = true)
+    @Test(priority = 2, enabled = true,groups = "smoke")
     public void validAdminLogin ( ) {
         driver.findElement ( By.id ( "txtUsername" ) ).sendKeys ( "Syntax" );
         driver.findElement ( By.id ( "txtPassword" ) ).sendKeys ( "Batch8" );
@@ -59,7 +59,7 @@ public class HM {
         System.out.println ( "My code after the assertion" );
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void closeBrowser ( ) {
         driver.quit ( );
     }

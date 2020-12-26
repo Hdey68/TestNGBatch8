@@ -18,7 +18,7 @@ public class HomeWork {
 
     WebDriver driver;
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void openAndNavigate ( ) {
         System.setProperty ( "webdriver.chrome.driver", "drivers/chromedriver.exe" );
         driver = new ChromeDriver ( );
@@ -27,7 +27,7 @@ public class HomeWork {
         driver.manage ( ).timeouts ( ).implicitlyWait ( 15, TimeUnit.SECONDS );
     }
 
-    @Test
+    @Test(groups = "regression")
     public void syntaxLogo ( ) {
         WebElement syntaxLogo = driver.findElement ( By.xpath ( "//*[@id=\"divLogo\"]/img" ) );
         if (syntaxLogo.isDisplayed ( )) {
@@ -36,7 +36,7 @@ public class HomeWork {
             System.out.println ( "Syntax Logo not present: Test Fail" );
         }
     }
-    @Test
+    @Test(groups = "Smoke")
     public void validAdminLogin ( ) {
         driver.findElement ( By.id ( "txtUsername" ) ).sendKeys ( "Syntax" );
         driver.findElement ( By.id ( "txtPassword" ) ).sendKeys ( "Batch8" );
@@ -49,7 +49,7 @@ public class HomeWork {
             System.out.println ( "Test fail" );
         }
     }
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void closeBrowser ( ) {
         driver.quit ( );
     }

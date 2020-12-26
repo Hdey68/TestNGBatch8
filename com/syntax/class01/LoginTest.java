@@ -16,16 +16,16 @@ public class LoginTest {
 
         WebDriver driver;
 
-        @BeforeMethod
+        @BeforeMethod(alwaysRun = true)
         public void openAndNavigate () {
-            System.setProperty ( "webdriver.chrome.driver","C:\\Users\\sofiane\\eclipse-workspace\\TestNGBasics\\drivers\\chromedriver.exe" );
+            System.setProperty ( "webdriver.chrome.driver","drivers\\chromedriver.exe" );
             driver = new ChromeDriver ( );
             driver.get ( "http://hrmstest.syntaxtechs.net/humanresources/symfony/web/index.php/auth/login" );
             driver.manage ( ).window ( ).maximize ( );
             driver.manage ( ).timeouts ( ).implicitlyWait ( 15, TimeUnit.SECONDS );
         }
 
-        @Test
+        @Test(groups = "smoke")
         public void validAdminLogin () {
             driver.findElement ( By.id ( "txtUsername" ) ).sendKeys ( "Admin" );
             driver.findElement ( By.id ( "txtPassword" ) ).sendKeys ( "Hum@nhrm123" );
@@ -39,7 +39,7 @@ public class LoginTest {
             }
 
         }
-        @Test
+        @Test(groups = "regression")
         public void titleValidation(){
             String expectedTitle="Human Management System";
             String actualTitle=driver.getTitle ();
@@ -49,7 +49,7 @@ public class LoginTest {
                 System.out.println ("Title not valid" );
             }
         }
-        @AfterMethod
+        @AfterMethod(alwaysRun = true)
     public void closeBrowser(){
             driver.quit ();
         }
