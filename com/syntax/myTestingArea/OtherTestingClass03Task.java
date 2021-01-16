@@ -21,7 +21,7 @@ public class OtherTestingClass03Task {
         System.setProperty ( "webdriver.chrome.driver", "drivers/chromedriver.exe" );
         driver = new ChromeDriver ( );
         driver.manage ( ).timeouts ( ).implicitlyWait ( 20, TimeUnit.SECONDS );
-        driver.navigate ( ).to ( "http://hrmstest.syntaxtechs.net/humanresources/symfony/web/index.php/auth/login" );
+        driver.navigate ( ).to ( "http://hrm.syntaxtechs.net/humanresources/symfony/web/index.php/auth/login" );
         driver.manage ( ).window ( ).maximize ( );
     }
 
@@ -76,35 +76,35 @@ public class OtherTestingClass03Task {
 
         Object[][] data = new Object[5][5];
 
-        data[0][0] = "ali";
-        data[0][1] = "Gouba";
-        data[0][2] = "aliGouba";
-        data[0][3] = "Gouba@123";
-        data[0][4] = "Gouba@123";
+        data[0][0] = "alia";
+        data[0][1] = "Goubaa";
+        data[0][2] = "aliGoubaa";
+        data[0][3] = "Gouba@123a";
+        data[0][4] = "Gouba@123a";
 
-        data[1][0] = "salim";
-        data[1][1] = "Dekkiche";
-        data[1][2] = "salimDekkiche";
-        data[1][3] = "Dekkiche@123";
-        data[1][4] = "Dekkiche@123";
+        data[1][0] = "salima";
+        data[1][1] = "Dekkichea";
+        data[1][2] = "salimDekkichea";
+        data[1][3] = "Dekkiche@123a";
+        data[1][4] = "Dekkiche@123a";
 
-        data[2][0] = "Kamel";
-        data[2][1] = "Nabou";
-        data[2][2] = "KamelNabou";
-        data[2][3] = "Nabou@123";
-        data[2][4] = "Nabou@123";
+        data[2][0] = "Kamela";
+        data[2][1] = "Naboua";
+        data[2][2] = "KamelNaboua";
+        data[2][3] = "Nabou@123a";
+        data[2][4] = "Nabou@123a";
 
-        data[3][0] = "Nabil";
-        data[3][1] = "Kawa";
-        data[3][2] = "NabilKawa";
-        data[3][3] = "Kawa@123";
-        data[3][4] = "Kawa@123";
+        data[3][0] = "Nabila";
+        data[3][1] = "Kawaa";
+        data[3][2] = "NabilKawaa";
+        data[3][3] = "Kawa@123a";
+        data[3][4] = "Kawa@123a";
 
-        data[4][0] = "Nabila";
-        data[4][1] = "Salma";
-        data[4][2] = "NabilaSalma";
-        data[4][3] = "Salma@123";
-        data[4][4] = "Salma@123";
+        data[4][0] = "Nabilaa";
+        data[4][1] = "Salmaa";
+        data[4][2] = "NabilaSalmaa";
+        data[4][3] = "Salma@123a";
+        data[4][4] = "Salma@123a";
 
         return data;
     }

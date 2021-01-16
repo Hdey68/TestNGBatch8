@@ -36,7 +36,7 @@ Specify group for this test case, add it into specific suite and execute from xm
     public void openAndNavigate ( ) {
         System.setProperty ( "webdriver.chrome.driver", "drivers/chromedriver.exe" );
         driver = new ChromeDriver ( );
-        driver.get ( "http://hrmstest.syntaxtechs.net/humanresources/symfony/web/index.php/auth/login" );
+        driver.get ( "http://hrm.syntaxtechs.net/humanresources/symfony/web/index.php/auth/login" );
         driver.manage ( ).window ( ).maximize ( );
         driver.manage ( ).timeouts ( ).implicitlyWait ( 15, TimeUnit.SECONDS );
     }

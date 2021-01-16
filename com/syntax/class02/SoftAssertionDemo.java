@@ -23,7 +23,7 @@ public class SoftAssertionDemo {
     public void openAndNavigate ( ) {
         System.setProperty ( "webdriver.chrome.driver", "drivers/chromedriver.exe" );
         driver = new ChromeDriver ( );
-        driver.get ( "http://hrmstest.syntaxtechs.net/humanresources/symfony/web/index.php/auth/login" );
+        driver.get ( "http://hrm.syntaxtechs.net/humanresources/symfony/web/index.php/auth/login" );
         driver.manage ( ).window ( ).maximize ( );
         driver.manage ( ).timeouts ( ).implicitlyWait ( 15, TimeUnit.SECONDS );
     }
@@ -39,7 +39,7 @@ public class SoftAssertionDemo {
         WebElement element = driver.findElement ( By.xpath ( "//*[@id=\"divLogo\"]/img" ) );
         //creating an object of soft assertion
         SoftAssert softAssert = new SoftAssert ( );
-        softAssert.assertTrue ( !element.isDisplayed ( ), "Logo is not displayed" );
+        softAssert.assertTrue ( element.isDisplayed ( ), "Logo is not displayed" );
 
         //entering valid credentials to login
         String username = "Admin";
@@ -50,8 +50,8 @@ public class SoftAssertionDemo {
         //validate that we are logged in
         WebElement welcomeMessage = driver.findElement ( By.cssSelector ( "a#welcome" ) );
 
-        softAssert.assertTrue ( !welcomeMessage.isDisplayed ( ), "Welcome message is not displayed" );
-        softAssert.assertEquals ( welcomeMessage.getText ( ), "Welcomes " + username, "Welcome text is not matching" );
+        softAssert.assertTrue ( welcomeMessage.isDisplayed ( ), "Welcome message is not displayed" );
+        softAssert.assertEquals ( welcomeMessage.getText ( ), "Welcome " + username, "Welcome text is not matching" );
         System.out.println ( "End of the test case" );
         softAssert.assertAll ( );
     }

@@ -39,7 +39,7 @@ Close the browser
         System.setProperty ( "webdriver.chrome.driver", "drivers\\chromedriver.exe" );
         driver = new ChromeDriver ( );
         driver.manage ( ).timeouts ( ).implicitlyWait ( 20, TimeUnit.SECONDS );
-        driver.navigate ( ).to ( "http://hrmstest.syntaxtechs.net/humanresources/symfony/web/index.php/auth/login" );
+        driver.navigate ( ).to ( "http://hrm.syntaxtechs.net/humanresources/symfony/web/index.php/auth/login" );
         driver.findElement ( By.id ( "txtUsername" ) ).sendKeys ( "Admin" );
         driver.findElement ( By.id ( "txtPassword" ) ).sendKeys ( "Hum@nhrm123" );
         driver.findElement ( By.id ( "btnLogin" ) ).click ( );
